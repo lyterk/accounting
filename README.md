@@ -1,12 +1,18 @@
 # accounting
 
-FIXME: my new application.
+Yarr this be an excuse to teach meself double-entry accountin' and put off doin' my taxes 
 
 ## Installation
 
 Download from https://github.com/lyterk/accounting
 
 ## Usage
+
+- Ingest given CSV file, with minimal specification as to what type of CSV file, from a bank statement
+- Given an investment bank API, collect the assets and enter them into accounting books
+- Emit valid beancount files, so I can use that pretty pretty [fava UI](https://github.com/beancount/fava)
+
+## Legacy Usage Explanation
 
 FIXME: explanation
 
