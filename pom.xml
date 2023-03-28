@@ -4,9 +4,9 @@
   <groupId>net.clojars.lyterk</groupId>
   <artifactId>accounting</artifactId>
   <version>0.1.0-SNAPSHOT</version>
-  <name>lyterk/accounting</name>
+  <name>lyterk/accounting-ingestion</name>
   <description>FIXME: my new application.</description>
-  <url>https://github.com/lyterk/accounting</url>
+  <url>https://github.com/lyterk/accounting-ingestion</url>
   <licenses>
     <license>
       <name>Eclipse Public License</name>

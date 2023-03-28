@@ -1,0 +1,5 @@
+,ID,Datetime,Type,Status,Note,From,To,Amount (total),Amount (tip),Amount (tax),Amount (fee),Tax Rate,Tax Exempt,Funding Source,Destination,Beginning Balance,Ending Balance,Statement Period Venmo Fees,Terminal Location,Year to Date Venmo Fees,Disclaimer
+,1111111111111111111,2020-01-01T19:54:24,Payment,Complete,splitwise settle,Donald Trump,Joe Biden,"- $40,250.00",,0,,0,,Bank of America *1111,,,,,Venmo,,
+,1111111111111111112,2020-01-04T16:45:40,Payment,Complete,college,Nancy Pelosi,Paul Pelosi,- $10.00,,0,,0,,Venmo balance,,,,,Venmo,,
+,1111111111111111113,2023-03-21T07:19:00,Charge,Complete,Shwarma,Rick Santorum,Chuck Schumer,+ $16.50,,0,,0,,,Venmo balance,,,,Venmo,,
+,1111111111111111114,2023-03-21T07:19:00,Charge,Complete,Shwarma,Bob Rehnquist,Antonin Scalia,+ $16.50,+ $0.50,+ $0.75,$150.0,0,,,Venmo balance,,,,Venmo,,

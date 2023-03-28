@@ -1,4 +1,4 @@
-(ns lyterk.accounting
+(ns lyterk.ingestion.accounting
   (:gen-class)
   (:require [clojurewerkz.money.amounts :as ma]
             [clojurewerkz.money.currencies :as mc]

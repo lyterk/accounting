@@ -2,9 +2,9 @@
   (:refer-clojure :exclude [test])
   (:require [org.corfield.build :as bb]))
 
-(def lib 'net.clojars.lyterk/accounting)
+(def lib 'net.clojars.lyterk/accounting-ingestion)
 (def version "0.1.0-SNAPSHOT")
-(def main 'lyterk.accounting)
+(def main 'lyterk.ingestion.accounting)
 
 (defn test "Run the tests." [opts]
   (bb/run-tests opts))

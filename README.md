@@ -4,7 +4,7 @@ Yarr this be an excuse to teach meself double-entry accountin' and put off doin'
 
 ## Installation
 
-Download from https://github.com/lyterk/accounting
+Download from https://github.com/lyterk/accounting-ingestion
 
 ## Usage
 
@@ -26,7 +26,7 @@ Run the project, overriding the name to be greeted:
     $ clojure -X:run-x :name '"Someone"'
     Hello, Someone!
 
-Run the project directly, via `:main-opts` (`-m lyterk.accounting`):
+Run the project directly, via `:main-opts` (`-m lyterk.ingestion.accounting`):
 
     $ clojure -M:run-m
     Hello, World!

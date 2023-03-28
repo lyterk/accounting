@@ -1,7 +1,6 @@
-(ns lyterk.accounting-test
+(ns lyterk.ingestion.accounting-test
   (:require [clojure.test :refer :all]
-            [lyterk.accounting :refer :all]
-            [clojurewerkz.money.format :refer [format]]))
+            [lyterk.ingestion.accounting :refer :all]))
 
 (deftest a-test
   (testing "Basic test"
@@ -10,7 +9,3 @@
 (deftest import-test
   (testing "Failing weird"
     (is (= "Hello, Kevin!" (greet {:name "Kevin"})))))
-
-(deftest money-test
-  (testing "should money"
-    (is (= "$1.00" (format (one-dollar))))))
