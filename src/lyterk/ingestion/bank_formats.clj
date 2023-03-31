@@ -9,6 +9,9 @@
 (defn ingest-common-date [s]
   (jt/local-date "MM/dd/yyyy" s))
 
+(defn ingest-common-datetime [s]
+  (jt/local-date-time iso-local-date-time s))
+
 (defn chase-preprocess-fn [[headers first-row & _]]
   (let [zm (zipmap headers first-row)
         local-currency (get zm "Local Currency")]
@@ -37,14 +40,12 @@
                              :time #(jt/local-time "HH:mm:ss" %)
                              :amount parse-money}
      :key :ally-checking-account
-     :rowwise-fns merge-datetime
+     :rowwise-fn merge-datetime
      :hashing-fields [:datetime :description :amount :type]}}})
 
 (defonce venmo
   {:csv
-   {:field-transformations {:datetime #(jt/local-date-time
-                                        iso-local-date-time
-                                        %)
+   {:field-transformations {:datetime ingest-common-datetime
                             :amount-total parse-money
                             :amount-tax parse-money
                             :amount-tip parse-money

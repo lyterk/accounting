@@ -13,7 +13,9 @@
   (as-> s t ;; Alias s to t
     (str/trim t)
     (str/lower-case t)
+    ;; Turn spaces to dashes
     (str/replace t #"\s+" "-")
+    ;; Get rid of all non-digit symbols
     (str/replace t #"[^a-z\-]" "")
     (keyword t)))
 
@@ -43,7 +45,7 @@
   [data & {:keys [header-fn]
            :or {header-fn header-preprocessor}}]
   (map zipmap
-       (->> header-preprocessor
+       (->> (header-preprocessor data)
             (map keywordize)
             repeat)
        (rest data)))
@@ -72,13 +74,13 @@
              original original))
 
 (defn transform-row
-  [field-transformations
-   rowwise-fn
-   hashing-fields
-   key]
+  [{:keys [header-fn field-transformations rowwise-fn hashing-fields key]
+    :or {header-fn identity
+         field-transformations {}
+         rowwise-fn identity
+         hashing-fields []}}]
   (let [entry-time (jt/local-time)]
     (fn [row]
-      (println (str "transform-row called: " row))
       (-> row
           clear-empties
           (update-keyed field-transformations)
@@ -87,12 +89,8 @@
           (assoc :entry-time entry-time :key key)))))
 
 (defn load-csv
-  [file-name & {:keys [header-fn field-transformations rowwise-fn hashing-fields key]
-                :or {header-fn identity
-                     field-transformations {}
-                     rowwise-fn identity
-                     hashing-fields []}}]
-  (let [transform (transform-row field-transformations rowwise-fn hashing-fields key)]
+  [file-name munge-map]
+  (let [transform (transform-row munge-map)]
     (with-open [rdr (io/reader file-name)]
       (doall
        (->> (csv/read-csv rdr)
